@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Markdown Cheatsheet</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    max-width: 720px;
+    margin: 40px auto;
+    padding: 0 20px;
+    line-height: 1.6;
+    color: #222;
+  }
+  h1, h2, h3 { color: #111; }
+  code {
+    background: #f2f2f2;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-size: 0.9em;
+  }
+  pre {
+    background: #f2f2f2;
+    padding: 12px;
+    border-radius: 6px;
+    overflow-x: auto;
+  }
+  pre code {
+    background: none;
+    padding: 0;
+  }
+  blockquote {
+    border-left: 4px solid #ccc;
+    margin: 1em 0;
+    padding-left: 1em;
+    color: #555;
+  }
+  hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 2em 0;
+  }
+</style>
+</head>
+<body>
+<h1>Markdown Cheatsheet</h1>
+<p>A quick reference for writing in Markdown cells in your Jupyter notebooks. This covers what you'll actually use for taking process notes — not the full Markdown spec.</p>
+<h2>Headers</h2>
+<pre><code class="language-markdown"># Header 1 (big section title)
+## Header 2 (subsection — this is what we use for Imports, Failure Log, etc.)
+### Header 3 (smaller still)
+</code></pre>
+<h2>Text formatting</h2>
+<pre><code class="language-markdown">**bold text**
+*italic text*
+`inline code`
+</code></pre>
+<ul>
+<li><code>**bold text**</code> → <strong>bold text</strong></li>
+<li><code>*italic text*</code> → <em>italic text</em></li>
+<li><code>`inline code`</code> → <code>inline code</code> (use this for variable/function names in your notes)</li>
+</ul>
+<h2>Lists</h2>
+<p>Bullet list:</p>
+<pre><code class="language-markdown">- first point
+- second point
+</code></pre>
+<p>Numbered list:</p>
+<pre><code class="language-markdown">1. first step
+2. second step
+</code></pre>
+<h2>Blockquotes</h2>
+<pre><code class="language-markdown">&gt; A blockquote — useful for pasting in an error message or a line from the textbook you're responding to.
+</code></pre>
+<h2>Dividers</h2>
+<pre><code class="language-markdown">---
+</code></pre>
+<p>Three dashes on their own line makes a horizontal divider — good for separating steps.</p>
+<h2>Links</h2>
+<pre><code class="language-markdown">[link text](https://example.com)
+</code></pre>
+<h2>Links that open in a new tab</h2>
+<p>Standard Markdown links open in the same tab/window, replacing your notebook. If you want a link to open elsewhere — like a reference page you want open <em>alongside</em> your notebook rather than instead of it — use raw HTML instead. Jupyter renders any HTML you paste directly into a Markdown cell:</p>
+<pre><code class="language-html">&lt;a href=&quot;https://example.com&quot; target=&quot;_blank&quot;&gt;link text&lt;/a&gt;
+</code></pre>
+<p>The <code>target="_blank"</code> is what forces the new tab — Markdown's <code>[text](url)</code> syntax has no equivalent, so this is the one case where dropping into HTML is worth it.</p>
+<h2>Code blocks (for showing, not running, code)</h2>
+<p>Use a fenced code block when you want to paste in and discuss a snippet in a Markdown cell — this is different from an actual working code cell, which runs the code.</p>
+<p>Type three <strong>backtick</strong> characters (<code>`</code>) — not <code>&gt;</code>, that's blockquote syntax — followed by <code>python</code>, then your code, then three backticks again to close it:</p>
+<p><strong>What you type:</strong></p>
+<pre><code>```python
+some_code_here()
+```
+</code></pre>
+<p><strong>What it renders as:</strong></p>
+<pre><code class="language-python">some_code_here()
+</code></pre>
+<hr />
+<h2>Things that trip people up</h2>
+<ul>
+<li><strong>Leave a blank line</strong> above and below any list, header, or code block — Markdown often won't render correctly without it.</li>
+<li><strong><code>#</code> means something different depending on the cell type.</strong> In a Markdown cell, <code>#</code> makes a header. In a code cell, <code>#</code> starts a comment. Same character, opposite jobs.</li>
+<li><strong>You still have to run a Markdown cell</strong> (Shift+Enter) to see it rendered — it won't format itself just by clicking away.</li>
+</ul>
+</body>
+</html>
